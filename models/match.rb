@@ -29,31 +29,54 @@ class Match
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
-  # 
-  # def zombies()
-  #   sql = "SELECT z.* FROM zombies z INNER JOIN bitings b ON b.zombie_id = z.id WHERE b.victim_id = $1;"
-  #   values = [@id]
-  #   results = SqlRunner.run(sql, values)
-  #   return results.map { |zombie| Zombie.new(zombie) }
-  # end
 
-  def self.all()
-    sql = "SELECT * FROM matches"
-    results = SqlRunner.run( sql )
-    return results.map { |match| Match.new( match ) }
-  end
+  def trainer1()
+  sql = "SELECT * FROM trainers
+  WHERE id = $1"
+  values = [@trainer1_id]
+  results = SqlRunner.run(sql, values)
+  trainer1 = Trainer.map_all(results)
+  return trainer1
+end
 
-  def self.find( id )
-    sql = "SELECT * FROM matches
-    WHERE id = $1"
-    values = [id]
-    results = SqlRunner.run( sql, values )
-    return Match.new( results.first )
-  end
+def trainer2()
+  sql = "SELECT * FROM trainers
+  WHERE id = $1"
+  values = [@trainer2_id]
+  results = SqlRunner.run(sql, values)
+  trainer2 = Trainer.map_all(results)
+  return trainer2
+end
 
-  def self.delete_all
-    sql = "DELETE FROM matches"
-    SqlRunner.run( sql )
-  end
+def trainers()
+  result1 = trainer1()
+  result2 = trainer2()
+  trainers = result1 << result2.first
+  return trainers
+end
+
+def self.all()
+  sql = "SELECT * FROM matches"
+  results = SqlRunner.run( sql )
+  matches = map_all(results)
+  return matches
+end
+
+def self.find( id )
+  sql = "SELECT * FROM matches
+  WHERE id = $1"
+  values = [id]
+  results = SqlRunner.run( sql, values )
+  return Match.new( results.first )
+end
+
+def self.delete_all
+  sql = "DELETE FROM matches"
+  SqlRunner.run( sql )
+end
+
+def self.map_all(match_data)
+  return match_data.map { |match| Match.new(match) }
+end
 
 end
