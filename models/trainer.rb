@@ -36,6 +36,16 @@ def matches()
   return trainers
 end
 
+def matches()
+  sql = "SELECT * FROM matches
+  WHERE trainer1_id = $1
+  OR trainer2_id = $1"
+  values = [@id]
+  results = SqlRunner.run( sql, values )
+  matches = Match.map_all(results)
+  return matches
+end
+
 def self.all()
   sql = "SELECT * FROM trainers"
   results = SqlRunner.run( sql )
