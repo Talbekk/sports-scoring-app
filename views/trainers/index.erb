@@ -1,8 +1,8 @@
 <h1> Trainer List: </h1>
 
 <% @trainers.each do |trainer| %>
-  <p> <b> Name:</b> <%= trainer.name %></p>
+  <p> <b><a href="/trainers/<%= trainer.id %>"></b> <%= trainer.name %></a></p>
   <p> <b> Hometown:</b> <%= trainer.hometown %></p>
   <hr/>
 <% end %>
-  <p></p><a href="/trainers/new"> Add Trainer </a></p>
+  <p><a href="/trainers/new"> Add Trainer </a></p>

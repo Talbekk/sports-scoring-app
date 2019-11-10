@@ -1,0 +1,11 @@
+<form action="/trainers/<%= @trainer.id %>" method="post">
+
+  <label for="name">Name: </label>
+  <input type="text" id="name" name="name" value="<%= @trainer.name %>"/>
+
+  <label for="hometown">Hometown: </label>
+  <input type="text" id="hometown" name="hometown" value="<%= @trainer.hometown %>"/>
+
+  <input type="submit" value="Enter Trainer">
+
+</form>

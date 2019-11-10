@@ -1,3 +1,8 @@
 <h1><%= @trainer.name %> (trainer)</h1>
 
 <p> Hometown <%= @trainer.hometown %></p>
+
+<form action="/trainers/<%= @trainer.id %>/delete" method="post">
+  <input type="submit"
+  name="" value="REMOVE">
+</form>
