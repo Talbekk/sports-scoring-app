@@ -2,6 +2,7 @@
 
 <p> Hometown <%= @trainer.hometown %></p>
 
+<a href="/trainers/<%= @trainer.id %>/edit">Edit Trainer</a>
 <form action="/trainers/<%= @trainer.id %>/delete" method="post">
   <input type="submit"
   name="" value="REMOVE">
