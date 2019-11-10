@@ -32,16 +32,17 @@ end
 get '/trainers/:id/edit' do
   @matches = Match.all
   @trainer = Trainer.find(params['id'].to_i)
+  erb(:"trainers/edit")
 end
 
 post '/trainers/:id' do
   trainer = Trainer.new(params)
-  trainer.update
-  redirect to '/trainers'
+  trainer.update()
+  redirect to "/trainers/#{params['id']}"
 end
 
 post '/trainers/:id/delete' do
-  trainer = Trainer.find(params[:id])
+  trainer = Trainer.find(params['id'].to_i)
   trainer.delete()
   redirect to '/trainers'
 end

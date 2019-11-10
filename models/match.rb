@@ -30,6 +30,23 @@ def save()
   @id = results.first()['id'].to_i
 end
 
+def update()
+  sql = "UPDATE matches
+  SET
+  (
+    trainer1_id,
+    home_score,
+    trainer2_id,
+    away_score
+  ) =
+  (
+    $1, $2, $3, $4
+  )
+  WHERE id = $5"
+  values = [@trainer1_id, @home_score, @trainer2_id, @away_score, @id]
+  SqlRunner.run(sql, values)
+end
+
 def trainer1()
   sql = "SELECT * FROM trainers
   WHERE id = $1"
