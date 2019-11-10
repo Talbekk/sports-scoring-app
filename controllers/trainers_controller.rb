@@ -12,12 +12,18 @@ get '/trainers' do
   @trainers = Trainer.all()
   erb (:"trainers/index")
 end
-#
-# get '/trainers/new' do
-#   @trainers = Trainer.all()
-#   erb (:new)
-# end
-#
+
+get '/trainers/new' do
+  @trainers = Trainer.all()
+  erb (:"trainers/new")
+end
+
+post '/trainers' do
+  trainer = Trainer.new(params)
+  trainer.save()
+  redirect to ("/trainers")
+end
+
 get '/trainers/:id' do
   @trainers = Trainer.find(params['id'].to_i)
   erb(:"trainers/show")
