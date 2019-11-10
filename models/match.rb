@@ -30,7 +30,7 @@ class Match
     @id = results.first()['id'].to_i
   end
 
-  def trainer1()
+def trainer1()
   sql = "SELECT * FROM trainers
   WHERE id = $1"
   values = [@trainer1_id]
@@ -53,6 +53,12 @@ def trainers()
   result2 = trainer2()
   trainers = result1 << result2.first
   return trainers
+end
+
+def delete()
+  sql = "DELETE FROM matches WHERE id = $1"
+  values = [@id]
+  SqlRunner.run(sql, values)
 end
 
 def self.all()

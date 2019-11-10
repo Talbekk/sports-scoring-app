@@ -46,6 +46,12 @@ def matches()
   return matches
 end
 
+def delete()
+  sql = "DELETE FROM trainers WHERE id = $1"
+  values = [@id]
+  SqlRunner.run(sql, values)
+end
+
 def self.all()
   sql = "SELECT * FROM trainers"
   results = SqlRunner.run( sql )
