@@ -1,7 +1,14 @@
-<h1><%= @trainer.name %> (trainer)</h1>
+<h1><%= @trainer.name %> (Trainer)</h1>
 
-<p> Hometown <%= @trainer.hometown %></p>
+<p><b>Hometown: </b><%= @trainer.hometown %></p>
 
+<p><b><u>List Of Matches:</u></b></p>
+<ul>
+  <% @trainer.matches.each do |match| %>
+  <li><%= match.trainer1.first.name %> <b><%= match.home_score %></b> - <b><%= match.away_score %></b> <%= match.trainer2.first.name %></li>
+  <p><a href="/matches/<%= match.id %>"> <b>Match Details</b></a></p>
+  <% end %>
+</ul>
 <a href="/trainers/<%= @trainer.id %>/edit">Edit Trainer</a>
 <form action="/trainers/<%= @trainer.id %>/delete" method="post">
   <input type="submit"

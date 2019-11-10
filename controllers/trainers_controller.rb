@@ -25,6 +25,7 @@ post '/trainers' do
 end
 
 get '/trainers/:id' do
+  @matches = Match.all()
   @trainer = Trainer.find(params['id'].to_i)
   erb(:"trainers/show")
 end
