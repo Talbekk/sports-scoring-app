@@ -29,7 +29,7 @@ get '/matches' do
 end
 
 get '/matches/:id/edit' do
-  @trainers = Trainers.all?
+  @trainers = Trainer.all
   @match = Match.find(params['id'])
 end
 
