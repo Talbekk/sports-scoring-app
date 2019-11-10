@@ -1,0 +1,6 @@
+<h1> Match List: </h1>
+
+<% @matches.each do |match| %>
+  <p><%= match.trainer1.first.name %> <%= match.home_score %> - <%= match.away_score %> <%= match.trainer2.first.name %></p>
+  <hr/>
+<% end %>

@@ -8,20 +8,20 @@ require_relative ('../models/match.rb')
 
 also_reload( '../models/*' )
 
-# get '/trainers' do
-#   @trainers = Trainer.all()
-#   erb (:"trainers/index")
-# end
+get '/trainers' do
+  @trainers = Trainer.all()
+  erb (:"trainers/index")
+end
 #
 # get '/trainers/new' do
 #   @trainers = Trainer.all()
 #   erb (:new)
 # end
 #
-# get '/trainers/:id' do
-#   @trainers = Trainer.find(params['id'].to_i)
-#   erb(:"trainers/show")
-# end
+get '/trainers/:id' do
+  @trainers = Trainer.find(params['id'].to_i)
+  erb(:"trainers/show")
+end
 #
 # get '/trainers' do
 #   @trainer = Trainer.new(params)
