@@ -2,6 +2,7 @@
 
 <% @matches.each do |match| %>
   <p><%= match.trainer1.first.name %> <%= match.home_score %> - <%= match.away_score %> <%= match.trainer2.first.name %></p>
+  <p><a href="/matches/<%= match.id %>"> Match Details </a></p>
   <hr/>
 <% end %>
 

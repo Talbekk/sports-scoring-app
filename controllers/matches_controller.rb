@@ -20,12 +20,13 @@ end
 
 post '/matches' do
   match = Match.new(params)
-  match.save
+  match.save()
   redirect to '/matches'
 end
 
 get '/matches/:id' do
-  @matches = Match.find(params['id'].to_i)
+  @trainers = Trainer.all()
+  @match = Match.find(params['id'].to_i)
   erb(:"matches/show")
 end
 #
@@ -46,8 +47,8 @@ end
 #   redirect to '/matches/#{params[id]}'
 # end
 #
-# post '/matches/:id/delete' do
-#   match = Match.find(params[:id])
-#   match.delete()
-#   redirect to '/matches'
-# end
+post '/matches/:id/delete' do
+  match = Match.find(params['id'].to_i)
+  match.delete()
+  redirect to '/matches'
+end
