@@ -10,14 +10,20 @@ also_reload( '../models/*' )
 
 get '/matches' do
   @matches = Match.all()
-  erb (:"matches/index")
+  erb(:"matches/index")
 end
-#
-# get '/matches/new' do
-#   @matches = Match.all()
-#   erb (:new)
-# end
-#
+
+get '/matches/new' do
+  @trainers = Trainer.all()
+  erb(:"matches/new")
+end
+
+post '/matches' do
+  match = Match.new(params)
+  match.save
+  redirect to '/matches'
+end
+
 get '/matches/:id' do
   @matches = Match.find(params['id'].to_i)
   erb(:"matches/show")
