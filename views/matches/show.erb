@@ -11,3 +11,7 @@
 <p>Score: <%= @match.away_score %></p>
 
 <a href="/matches/<%= @match.id %>/edit">Edit Match</a>
+<form action="/matches/<%= @match.id %>/delete" method="post">
+  <input type="submit"
+  name="" value="REMOVE">
+</form>

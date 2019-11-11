@@ -86,6 +86,7 @@ return "draw" if (@home_score == @away_score)
     result = @trainer2_id
   end
   trainer = Trainer.find( result )
+  trainer.add_win()
   return trainer
 end
 

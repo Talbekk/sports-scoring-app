@@ -44,6 +44,7 @@ end
 def test_get_match_winner()
   result = @match1.get_match_winner()
   assert_equal("Ash Ketchum", result.name)
+  assert_equal(3, result.points)
 end
 
 # def test_get_match_winners_name()
