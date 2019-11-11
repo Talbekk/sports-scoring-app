@@ -86,8 +86,18 @@ return "draw" if (@home_score == @away_score)
     result = @trainer2_id
   end
   trainer = Trainer.find( result )
-  trainer.add_win()
   return trainer
+  # trainer.add_win()
+  # trainer.update()
+end
+
+def add_points_to_winner(trainers, match)
+  for trainer in trainers
+    if (match.get_match_winner.name ==  trainer.name)
+        trainer.add_win()
+        trainer.update()
+      end
+    end 
 end
 
 # def get_match_winners_name(trainers, trainer_id)

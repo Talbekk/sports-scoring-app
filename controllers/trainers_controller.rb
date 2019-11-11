@@ -14,6 +14,7 @@ get '/trainers' do
   erb (:"trainers/index")
 end
 
+
 get '/trainers/new' do
   @trainers = Trainer.all()
   erb (:"trainers/new")

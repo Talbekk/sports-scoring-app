@@ -4,11 +4,7 @@
   <p><b><a href="/trainers/<%= trainer.id %>"></b> <%= trainer.name %></a></p>
   <p><b> Hometown:</b> <%= trainer.hometown %></p>
   <p><b> Score:</b>
-    <% for match in @matches
-      if (match.get_match_winner.name == trainer.name)
-        trainer.add_win
-    end
-    end %> <%= trainer.points %></p>
+   <%= trainer.points %></p>
   <hr/>
 <% end %>
   <p><a href="/trainers/new"> Add Trainer </a></p>

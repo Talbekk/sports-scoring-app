@@ -9,6 +9,7 @@ require_relative ('../models/trainer.rb')
 also_reload( '../models/*' )
 
 get '/matches' do
+  @trainers = Trainer.all()
   @matches = Match.all()
   erb(:"matches/index")
 end
@@ -21,6 +22,7 @@ end
 post '/matches' do
   @trainers = Trainer.all()
   @match = Match.new(params)
+  @match.add_points_to_winner(@trainers, @match)
   @match.save()
   erb(:"matches/create")
 end
