@@ -19,9 +19,10 @@ get '/matches/new' do
 end
 
 post '/matches' do
-  match = Match.new(params)
-  match.save()
-  redirect to '/matches'
+  @trainers = Trainer.all()
+  @match = Match.new(params)
+  @match.save()
+  erb(:"matches/create")
 end
 
 get '/matches/:id' do

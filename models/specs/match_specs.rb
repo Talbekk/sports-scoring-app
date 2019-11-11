@@ -15,6 +15,8 @@ def setup
 
   @trainer2 = Trainer.new(options)
 
+  # @trainers = [@trainer1, @trainer2]
+
   options = ({
     "trainer1_id" => @trainer1.id,
     "home_score" => 3,
@@ -23,7 +25,6 @@ def setup
   })
 
   @match1 = Match.new(options)
-
 
 end
 
@@ -42,8 +43,14 @@ end
 
 def test_get_match_winner()
   result = @match1.get_match_winner()
-  assert_equal(1, result)
+  assert_equal("Ash Ketchum", result.name)
 end
+
+# def test_get_match_winners_name()
+#   result = @match1.get_match_winner()
+#   name = @match1.get_match_winners_name(@trainers, result)
+#   assert_equal("Ash Ketchum", name)
+# end
 
 def test_get_match_winner__draw()
   options = ({
