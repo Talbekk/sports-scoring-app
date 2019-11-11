@@ -24,6 +24,7 @@ def setup
 
   @match1 = Match.new(options)
 
+
 end
 
 def test_get_home_score()
@@ -32,7 +33,13 @@ end
 
 def test_get_away_score()
   assert_equal(2, @match1.away_score)
-end 
+end
+
+def test_get_trainer_name()
+  assert_equal(1, @match1.trainer1_id())
+  assert_equal(2, @match1.trainer2_id())
+end
+
 
 
 # def test_get_match_winner()
