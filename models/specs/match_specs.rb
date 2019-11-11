@@ -40,6 +40,11 @@ def test_get_trainer_name()
   assert_equal(2, @match1.trainer2_id())
 end
 
+def test_get_match_winner()
+  result = @match1.get_match_winner()
+  assert_equal(1, result)
+end 
+
 
 
 # def test_get_match_winner()
