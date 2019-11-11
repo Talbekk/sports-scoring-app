@@ -78,6 +78,8 @@ def delete()
   SqlRunner.run(sql, values)
 end
 
+def get_match_winner(trainer1, home_score, trainer2, away_score)
+
 def self.all()
   sql = "SELECT * FROM matches"
   results = SqlRunner.run( sql )
