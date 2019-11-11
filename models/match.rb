@@ -79,7 +79,7 @@ def delete()
 end
 
 def get_match_winner()
-return if (@home_score == @away_score)
+return "draw" if (@home_score == @away_score)
   if (@home_score > @away_score )
     return @trainer1_id
   else (@home_score < @away_score)

@@ -43,14 +43,19 @@ end
 def test_get_match_winner()
   result = @match1.get_match_winner()
   assert_equal(1, result)
-end 
+end
 
+def test_get_match_winner__draw()
+  options = ({
+    "trainer1_id" => @trainer1.id,
+    "home_score" => 2,
+    "trainer2_id" => @trainer2.id,
+    "away_score" => 2
+  })
+  @match2 = Match.new(options)
 
-
-# def test_get_match_winner()
-#   @match1.match_winner()
-#   result = @match1.trainer1.first.name()
-#   assert_equal("Ash Ketchum", result)
-# end
+  result = @match2.get_match_winner
+  assert_equal("draw", result)
+end
 
 end
