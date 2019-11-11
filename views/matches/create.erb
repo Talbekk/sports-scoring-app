@@ -1,3 +1,4 @@
 <p>Congratulations to <%= @match.get_match_winner.name %>
-  <%  %>
 on their recent victory!</p>
+<p>They now have <% result = @match.get_match_winner()
+  result.add_win() %><%= @match.get_match_winner.points %> points</p>

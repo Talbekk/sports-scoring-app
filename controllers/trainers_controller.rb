@@ -10,6 +10,7 @@ also_reload( '../models/*' )
 
 get '/trainers' do
   @trainers = Trainer.all()
+  @matches = Match.all()
   erb (:"trainers/index")
 end
 
