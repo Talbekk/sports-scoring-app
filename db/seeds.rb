@@ -7,14 +7,16 @@ Trainer.delete_all()
 
 trainer1 = Trainer.new({
   "name" => "Ash Ketchum",
-  "hometown" => "Pallet Town"
+  "hometown" => "Pallet Town",
+  "points" => 0
 })
 
 trainer1.save()
 
 trainer2 = Trainer.new({
   "name" => "Gary Oak",
-  "hometown" => "Pallet Town"
+  "hometown" => "Pallet Town",
+  "points" => 0
 })
 
 trainer2.save()

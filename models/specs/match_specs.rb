@@ -7,11 +7,11 @@ class MatchTest < Minitest::Test
 
 def setup
 
-  options = {"id" => 1, "name" => "Ash Ketchum", "hometown" => "Pallet Town"}
+  options = {"id" => 1, "name" => "Ash Ketchum", "hometown" => "Pallet Town", "points" => 0}
 
   @trainer1 = Trainer.new(options)
 
-  options = {"id" => 2, "name" => "Gary Oak", "hometown" => "Pallet Town"}
+  options = {"id" => 2, "name" => "Gary Oak", "hometown" => "Pallet Town", "points" => 0}
 
   @trainer2 = Trainer.new(options)
 

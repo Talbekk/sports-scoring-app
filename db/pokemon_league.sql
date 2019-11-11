@@ -4,7 +4,8 @@ DROP TABLE trainers;
 CREATE TABLE trainers (
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255),
-  hometown VARCHAR(255)
+  hometown VARCHAR(255),
+  points INT8
 );
 
 CREATE TABLE matches (

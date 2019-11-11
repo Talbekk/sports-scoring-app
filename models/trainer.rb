@@ -3,25 +3,28 @@ require_relative( '../db/sql_runner' )
 class Trainer
 
 attr_reader( :id, :name, :hometown )
+attr_accessor( :points )
 
 def initialize( options )
   @id = options['id'].to_i if options['id']
   @name = options['name']
   @hometown = options['hometown']
+  @points = options['points'].to_i
 end
 
 def save()
   sql = "INSERT INTO trainers
   (
     name,
-    hometown
+    hometown,
+    points
   )
   VALUES
   (
-    $1, $2
+    $1, $2, $3
   )
   RETURNING id"
-  values = [@name, @hometown]
+  values = [@name, @hometown, @points]
   results = SqlRunner.run(sql, values)
   @id = results.first()['id'].to_i
 end
@@ -31,13 +34,14 @@ def update()
     SET
     (
       name,
-      hometown
+      hometown,
+      points
     ) =
     (
-      $1, $2
+      $1, $2, $3
     )
-    WHERE id = $3"
-    values = [@name, @hometown, @id]
+    WHERE id = $4"
+    values = [@name, @hometown, @points, @id]
     SqlRunner.run(sql, values)
   end
 
