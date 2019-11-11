@@ -71,6 +71,14 @@ def delete()
   SqlRunner.run(sql, values)
 end
 
+def add_points(points)
+  @points += points
+end
+
+def add_win()
+  @points += 3
+end
+
 def self.all()
   sql = "SELECT * FROM trainers"
   results = SqlRunner.run( sql )
