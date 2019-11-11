@@ -1,5 +1,6 @@
 <h1> Trainer List: </h1>
 
+
 <% @trainers.each do |trainer| %>
   <p><b><a href="/trainers/<%= trainer.id %>"></b> <%= trainer.name %></a></p>
   <p><b> Hometown:</b> <%= trainer.hometown %></p>

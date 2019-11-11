@@ -9,11 +9,11 @@ require_relative ('../models/match.rb')
 also_reload( '../models/*' )
 
 get '/trainers' do
-  @trainers = Trainer.all()
-  @matches = Match.all()
+  @trainers1 = Trainer.all()
+  @trainers2 = @trainers1.sort_by {|trainer| trainer.points}
+  @trainers = @trainers2.reverse
   erb (:"trainers/index")
 end
-
 
 get '/trainers/new' do
   @trainers = Trainer.all()
