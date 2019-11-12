@@ -36,23 +36,23 @@ def save()
 end
 
 def update()
-    sql = "UPDATE trainers
-    SET
-    (
-      name,
-      hometown,
-      points,
-      monster1_id,
-      monster2_id,
-      monster3_id
-    ) =
-    (
-      $1, $2, $3, $4, $5, $6
-    )
-    WHERE id = $7"
-    values = [@name, @hometown, @points, @monster1_id, @monster2_id, @monster3_id, @id]
-    SqlRunner.run(sql, values)
-  end
+  sql = "UPDATE trainers
+  SET
+  (
+    name,
+    hometown,
+    points,
+    monster1_id,
+    monster2_id,
+    monster3_id
+  ) =
+  (
+    $1, $2, $3, $4, $5, $6
+  )
+  WHERE id = $7"
+  values = [@name, @hometown, @points, @monster1_id, @monster2_id, @monster3_id, @id]
+  SqlRunner.run(sql, values)
+end
 
 # def matches()
 #   sql = "SELECT matches.*
@@ -63,6 +63,42 @@ def update()
 #   trainers = Trainer.map_items(results)
 #   return trainers
 # end
+
+def monster1()
+  sql = "SELECT * FROM monsters
+  WHERE id = $1"
+  values = [@monster1_id]
+  results = SqlRunner.run(sql, values)
+  monster1 = Monster.map_all(results)
+  return monster1
+end
+
+def monster2()
+  sql = "SELECT * FROM monsters
+  WHERE id = $1"
+  values = [@monster2_id]
+  results = SqlRunner.run(sql, values)
+  monster2 = Monster.map_all(results)
+  return monster2
+end
+
+def monster3()
+  sql = "SELECT * FROM monsters
+  WHERE id = $1"
+  values = [@monster3_id]
+  results = SqlRunner.run(sql, values)
+  monster3 = Monster.map_all(results)
+  return monster3
+end
+
+def monsters()
+  result1 = monster1()
+  result2 = monster2()
+  result3 = monster3()
+  monsters_a = result1 << result2.first
+  monsters = monsters_a << result3.first
+  return monsters
+end
 
 def matches()
   sql = "SELECT * FROM matches
