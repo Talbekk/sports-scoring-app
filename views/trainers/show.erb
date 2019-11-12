@@ -15,8 +15,11 @@
   <p><a href="/matches/<%= match.id %>"> <b>Match Details</b></a></p>
   <% end %>
 </ul>
+<p><b>Record: </b><%= @trainer.games_won %> - <%= @trainer.games_lost %></p>
 <a href="/trainers/<%= @trainer.id %>/edit">Edit Trainer</a>
 <form action="/trainers/<%= @trainer.id %>/delete" method="post">
   <input type="submit"
   name="" value="REMOVE">
 </form>
+<hr>
+<p><a href='/monsters'> Back To Trainers</a></p>

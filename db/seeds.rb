@@ -51,14 +51,14 @@ match1 = Match.new({
   "trainer1_id" => trainer1.id,
   "home_score" => 3,
   "trainer2_id" => trainer2.id,
-  "away_score" => 2
+  "away_score" => 0
 })
 
 match1.save()
 
 match2 = Match.new({
   "trainer1_id" => trainer2.id,
-  "home_score" => 4,
+  "home_score" => 2,
   "trainer2_id" => trainer1.id,
   "away_score" => 1
 })

@@ -11,8 +11,15 @@
 <p>Trainer Name: <a href="/trainers/<%= trainer2.id %>"><%= trainer2.name %></a></p>
 <p>Score: <%= @match.away_score %></p>
 
+<hr>
+
+<p><b>WINNER:</b> <%= @match.get_match_winner.name %></p>
+
 <a href="/matches/<%= @match.id %>/edit"> Edit Match</a>
 <form action="/matches/<%= @match.id %>/delete" method="post">
   <input type="submit"
   name="" value="REMOVE">
 </form>
+
+<hr>
+<p><a href='/monsters'> Back To Matches</a></p>
