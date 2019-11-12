@@ -1,13 +1,30 @@
 require_relative( "../models/trainer.rb" )
 require_relative( "../models/match.rb" )
+require_relative( "../models/monster.rb")
 require("pry-byebug")
 
 Match.delete_all()
+Monster.delete_all()
 Trainer.delete_all()
+
+monster1 = Monster.new({"name" => "Venusaur", "type" => "Grass/Poison", "level" => 50})
+
+monster1.save()
+
+monster2 = Monster.new({"name" => "Blastoise", "type" => "Water", "level" => 50})
+
+monster2.save()
+
+monster3 = Monster.new({"name" => "Charizard", "type" => "Fire/Flying", "level" => 50})
+
+monster3.save()
 
 trainer1 = Trainer.new({
   "name" => "Ash Ketchum",
   "hometown" => "Pallet Town",
+  "monster1_id" => monster1.id,
+  "monster2_id" => monster2.id,
+  "monster3_id" => monster3.id,
   "points" => 3
 })
 
@@ -16,6 +33,9 @@ trainer1.save()
 trainer2 = Trainer.new({
   "name" => "Gary Oak",
   "hometown" => "Pallet Town",
+  "monster1_id" => monster1.id,
+  "monster2_id" => monster2.id,
+  "monster3_id" => monster3.id,
   "points" => 3
 })
 

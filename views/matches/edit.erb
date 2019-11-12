@@ -3,7 +3,7 @@
 <label for="trainer1-select">Trainer Name: </label>
 <select name="trainer1_id" id="trainer1-select" selected="<%= @match.trainer1_id %>">
   <% @trainers.each do |trainer| %>
-  <% if trainer.id == @match.trainer1_id %> %>
+  <% if trainer.id == @match.trainer1_id %>
     <option value=<%= trainer.id %>selected><%= trainer.name %></option>
     <% else %>
       <option value=<%= trainer.id %>><%= trainer.name %></option>
@@ -17,7 +17,7 @@
 <label for="trainer2-select">Trainer Name: </label>
 <select name="trainer2_id" id="trainer2-select" selected="<%= @match.trainer2_id %>">
   <% @trainers.each do |trainer| %>
-  <% if trainer.id == @match.trainer2_id %> %>
+  <% if trainer.id == @match.trainer2_id %>
     <option value=<%= trainer.id %>selected><%= trainer.name %></option>
     <% else %>
       <option value=<%= trainer.id %>><%= trainer.name %></option>

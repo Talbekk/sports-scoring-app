@@ -6,6 +6,27 @@
 <label for="hometown">Hometown: </label>
 <input type="text" id="hometown" name="hometown">
 
+<label for="monster1-select">First Pokemon: </label>
+<select name="monster1_id" id="monster1-select">
+  <% @monsters.each do |monster| %>
+    <option value=<%= monster.id %>><%= monster.name %></option>
+  <% end %>
+</select>
+
+<label for="monster2-select">Second Pokemon: </label>
+<select name="monster2_id" id="monster2-select">
+  <% @monsters.each do |monster| %>
+    <option value=<%= monster.id %>><%= monster.name %></option>
+  <% end %>
+</select>
+
+<label for="monster3-select">Third Pokemon: </label>
+<select name="monster3_id" id="monster3-select">
+  <% @monsters.each do |monster| %>
+    <option value=<%= monster.id %>><%= monster.name %></option>
+  <% end %>
+</select>
+
 <input type="submit" value="Enter Trainer">
 
 </form>

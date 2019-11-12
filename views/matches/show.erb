@@ -4,11 +4,28 @@
 <p>Hometown: <%= @match.trainer1.first.hometown %></p>
 <p>Score: <%= @match.home_score %></p>
 
+<p><b><u> Team Used: </u></b></p>
+<% for trainer in @trainers %>
+<% if trainer.name == @match.trainer1.first.name %>
+<p><%= trainer.monster1.first.name %></p>
+<p><%= trainer.monster2.first.name %></p>
+<p><%= trainer.monster3.first.name %></p>
+<% end %>
+<% end %>
   <hr></hr>
 
 <p>Trainer Name: <%= @match.trainer2.first.name %></p>
 <p>Hometown: <%= @match.trainer2.first.hometown %></p>
 <p>Score: <%= @match.away_score %></p>
+
+<p><b><u> Team Used: </u></b></p>
+<% for trainer in @trainers %>
+<% if trainer.name == @match.trainer2.first.name %>
+<p><%= trainer.monster1.first.name %></p>
+<p><%= trainer.monster2.first.name %></p>
+<p><%= trainer.monster3.first.name %></p>
+<% end %>
+<% end %>
 
 <a href="/matches/<%= @match.id %>/edit">Edit Match</a>
 <form action="/matches/<%= @match.id %>/delete" method="post">

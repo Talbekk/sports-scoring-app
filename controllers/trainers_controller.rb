@@ -18,6 +18,7 @@ end
 
 get '/trainers/new' do
   @trainers = Trainer.all()
+  @monsters = Monster.all()
   erb (:"trainers/new")
 end
 
@@ -29,6 +30,7 @@ end
 
 get '/trainers/:id' do
   @matches = Match.all()
+  @monsters = Monster.all()
   @trainer = Trainer.find(params['id'].to_i)
   erb(:"trainers/show")
 end
