@@ -1,10 +1,21 @@
 DROP TABLE matches;
+DROP TABLE monsters;
 DROP TABLE trainers;
+
+CREATE TABLE monsters(
+id SERIAL8 PRIMARY KEY,
+name VARCHAR(255),
+type VARCHAR(255),
+level INT4
+);
 
 CREATE TABLE trainers (
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255),
   hometown VARCHAR(255),
+  monster1_id INT8 REFERENCES monsters(id),
+  monster2_id INT8 REFERENCES monsters(id),
+  monster3_id INT8 REFERENCES monsters(id),
   points INT8
 );
 

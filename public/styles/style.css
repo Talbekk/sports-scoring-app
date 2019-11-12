@@ -1,8 +1,24 @@
-body {
-  background-color: #800020;
 
-}
 a {
   text-decoration: none;
   color: black;
+  font-family: 'Press Start 2P', cursive;
+}
+
+table, th, td {
+  border: 1px solid black;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  height: 40%;
+  overflow-y: scroll;
+  position: static;
+  font-family: 'Press Start 2P', cursive;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Press Start 2P', cursive;
+}
+
+p {
+  font-family: 'Press Start 2P', cursive;
 }

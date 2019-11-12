@@ -1,11 +1,21 @@
 <h1> Trainer List: </h1>
 
+  <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Hometown</th>
+          <th>Points</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @trainers.each do |trainer| %>
+        <tr>
+          <td><b><a href="/trainers/<%= trainer.id %>"></b> <%= trainer.name %></a></td>
+          <td><%= trainer.hometown %></td>
+          <td><%= trainer.points %></td>
+          </tr>
+        <% end %>
+    </table>
 
-<% @trainers.each do |trainer| %>
-  <p><b><a href="/trainers/<%= trainer.id %>"></b> <%= trainer.name %></a></p>
-  <p><b> Hometown:</b> <%= trainer.hometown %></p>
-  <p><b> Score:</b>
-   <%= trainer.points %></p>
-  <hr/>
-<% end %>
-  <p><a href="/trainers/new"> Add Trainer </a></p>
+<p><a href="/trainers/new"> Add Trainer </a></p>
