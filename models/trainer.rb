@@ -3,12 +3,15 @@ require_relative( '../db/sql_runner' )
 class Trainer
 
 attr_reader( :id, :name, :hometown )
-attr_accessor( :points )
+attr_accessor( :monster1_id, :monster2_id, :monster3_id, :points )
 
 def initialize( options )
   @id = options['id'].to_i if options['id']
   @name = options['name']
   @hometown = options['hometown']
+  @monster1_id = options['monster1_id'].to_i
+  @monster2_id = options['monster2_id'].to_i
+  @monster3_id = options['monster3_id'].to_i
   @points = options['points'].to_i
 end
 
@@ -17,14 +20,17 @@ def save()
   (
     name,
     hometown,
-    points
+    points,
+    monster1_id,
+    monster2_id,
+    monster3_id
   )
   VALUES
   (
-    $1, $2, $3
+    $1, $2, $3, $4, $5, $6
   )
   RETURNING id"
-  values = [@name, @hometown, @points]
+  values = [@name, @hometown, @points, @monster1_id, @monster2_id, @monster3_id]
   results = SqlRunner.run(sql, values)
   @id = results.first()['id'].to_i
 end
@@ -35,13 +41,16 @@ def update()
     (
       name,
       hometown,
-      points
+      points,
+      monster1_id,
+      monster2_id,
+      monster3_id
     ) =
     (
-      $1, $2, $3
+      $1, $2, $3, $4, $5, $6
     )
-    WHERE id = $4"
-    values = [@name, @hometown, @points, @id]
+    WHERE id = $7"
+    values = [@name, @hometown, @points, @monster1_id, @monster2_id, @monster3_id, @id]
     SqlRunner.run(sql, values)
   end
 
