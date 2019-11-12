@@ -2,6 +2,7 @@ require('minitest/autorun')
 require('minitest/rg')
 require_relative('../match.rb')
 require_relative('../trainer.rb')
+require_relative('../monster.rb')
 
 class TrainerTest < Minitest::Test
 
@@ -41,7 +42,7 @@ end
 def test_add_win()
   @trainer1.add_win()
   assert_equal(3, @trainer1.points())
-end 
+end
 
 
 

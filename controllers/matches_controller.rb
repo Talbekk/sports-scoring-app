@@ -5,6 +5,7 @@ require('pry-byebug')
 
 require_relative( '../models/match.rb' )
 require_relative ('../models/trainer.rb')
+require_relative('../models/monster.rb')
 
 also_reload( '../models/*' )
 
