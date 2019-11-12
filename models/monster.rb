@@ -48,7 +48,7 @@ end
 
 def delete()
   sql = "DELETE FROM monsters WHERE id = $1"
-  vaoues = [@id]
+  values = [@id]
   SqlRunner.run(sql, values)
 end
 

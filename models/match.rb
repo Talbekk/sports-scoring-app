@@ -47,6 +47,21 @@ def update()
   SqlRunner.run(sql, values)
 end
 
+def update_score()
+  sql = "UPDATE matches
+  SET
+  (
+    home_score,
+    away_score
+  ) =
+  (
+    $1, $2
+  )
+  WHERE id = $3"
+  values = [@home_score, @away_score, @id]
+  SqlRunner.run(sql, values)
+end
+
 def trainer1()
   sql = "SELECT * FROM trainers
   WHERE id = $1"
