@@ -3,10 +3,10 @@
 
 <label for="name">Name:</label>
 <input type="text" id="name" name="name" value="<%= @trainer.name %>"/>
-
+<br>
 <label for="hometown">Hometown:</label>
 <input type="text" id="hometown" name="hometown" value="<%= @trainer.hometown %>"/>
-
+<br>
 <label for="monster1-select">First Pokemon: </label>
 <select name="monster1_id" id="monster1-select" selected="<%= @trainer.monster1_id %>">
   <% @monsters.each do |monster| %>
@@ -17,7 +17,7 @@
     <% end %>
   <% end %>
 </select>
-
+<br>
 <label for="monster2-select">Second Pokemon: </label>
 <select name="monster2_id" id="monster2-select" selected="<%= @trainer.monster2_id %>">
   <% @monsters.each do |monster| %>
@@ -28,7 +28,7 @@
     <% end %>
   <% end %>
 </select>
-
+<br>
 <label for="monster3-select">Third Pokemon: </label>
 <select name="monster3_id" id="monster3-select" selected="<%= @trainer.monster3_id %>">
   <% @monsters.each do |monster| %>
@@ -39,6 +39,6 @@
     <% end %>
   <% end %>
 </select>
-
+<br>
 <input type="submit" value="Edit Trainer">
 </form>

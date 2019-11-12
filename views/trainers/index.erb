@@ -11,7 +11,7 @@
       <tbody>
         <% @trainers.each do |trainer| %>
         <tr>
-          <td><b><a href="/trainers/<%= trainer.id %>"></b> <%= trainer.name %></a></td>
+          <td><a href="/trainers/<%= trainer.id %>"> <%= trainer.name %></a></td>
           <td><%= trainer.hometown %></td>
           <td><%= trainer.points %></td>
           </tr>

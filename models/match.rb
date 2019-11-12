@@ -87,8 +87,6 @@ return "draw" if (@home_score == @away_score)
   end
   trainer = Trainer.find( result )
   return trainer
-  # trainer.add_win()
-  # trainer.update()
 end
 
 def add_points_to_winner(trainers, match)
@@ -99,15 +97,6 @@ def add_points_to_winner(trainers, match)
       end
     end
 end
-
-# def get_match_winners_name(trainers, trainer_id)
-#  for trainer in trainers
-#     if ( trainer.id == trainer_id)
-#     result = trainer
-#     end
-#   end
-#   return result.name
-# end
 
 def self.all()
   sql = "SELECT * FROM matches"

@@ -54,16 +54,6 @@ def update()
   SqlRunner.run(sql, values)
 end
 
-# def matches()
-#   sql = "SELECT matches.*
-#   FROM matches
-#   WHERE trainers.trainer_id = $1"
-#   values = [@id]
-#   results = SqlRunner.run(sql, values)
-#   trainers = Trainer.map_items(results)
-#   return trainers
-# end
-
 def monster1()
   sql = "SELECT * FROM monsters
   WHERE id = $1"

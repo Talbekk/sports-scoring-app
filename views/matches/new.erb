@@ -6,20 +6,20 @@
     <option value=<%= trainer.id %>><%= trainer.name %></option>
   <% end %>
 </select>
-
+<br>
 <label for="home-score">Score: </label>
 <input type="number" id="home-score" name="home_score">
-
+<br>
 <label for="trainer2-select">Trainer Name: </label>
 <select name="trainer2_id" id="trainer2-select">
   <% @trainers.each do |trainer| %>
     <option value=<%= trainer.id %>><%= trainer.name %></option>
   <% end %>
 </select>
-
+<br>
 <label for="away-score">Score: </label>
 <input type="number" id="away-score" name="away_score">
-
+<br>
 <input type="submit" value="Submit Match">
 
 </form>

@@ -10,10 +10,10 @@
       <% end %>
   <% end %>
 </select>
-
+<br>
 <label for="home-score">Score: </label>
 <input type="number" id="home-score" name="home_score" value=<%= @match.home_score %>>
-
+<br>
 <label for="trainer2-select">Trainer Name: </label>
 <select name="trainer2_id" id="trainer2-select" selected="<%= @match.trainer2_id %>">
   <% @trainers.each do |trainer| %>
@@ -24,10 +24,10 @@
       <% end %>
   <% end %>
 </select>
-
+<br>
 <label for="away-score">Score: </label>
 <input type="number" id="away-score" name="away_score" value=<%= @match.away_score %>>
-
+<br>
 <input type="Submit" value="Edit Match">
 
 </form>

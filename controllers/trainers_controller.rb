@@ -36,7 +36,8 @@ get '/trainers/:id' do
 end
 
 get '/trainers/:id/edit' do
-  @matches = Match.all
+  @matches = Match.all()
+  @monsters = Monster.all()
   @trainer = Trainer.find(params['id'].to_i)
   erb(:"trainers/edit")
 end
