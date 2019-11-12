@@ -50,6 +50,7 @@ def test_get_away_score()
   assert_equal(2, @match1.away_score)
 end
 
+
 # def test_get_trainer_name()
 #   assert_equal(1, @match1.trainer1_id())
 #   assert_equal(2, @match1.trainer2_id())

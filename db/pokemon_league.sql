@@ -22,13 +22,7 @@ CREATE TABLE trainers (
 CREATE TABLE matches (
   id SERIAL8 PRIMARY KEY,
   trainer1_id INT8 REFERENCES trainers(id),
-  home1 VARCHAR(255),
-  home2 VARCHAR(255),
-  home3 VARCHAR(255),
   home_score INT4,
   trainer2_id INT8 REFERENCES trainers(id),
-  away1 VARCHAR(255),
-  away2 VARCHAR(255),
-  away3 VARCHAR(255),
   away_score INT4
 );

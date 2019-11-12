@@ -1,21 +1,10 @@
 <h1> Trainer List: </h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Hometown</th>
-      <th>Points</th>
-    </tr>
-    </thead>
-      <tbody>
-        <% @trainers.each do |trainer| %>
-        <tr>
-          <td><a href="/trainers/<%= trainer.id %>"> <%= trainer.name %></a></td>
-          <td><%= trainer.hometown %></td>
-          <td><%= trainer.points %></td>
-        </tr>
-        <% end %>
-</table>
+
+<% @trainers.each do |trainer| %>
+<p><%= trainer.name %></p>
+<p><a href="/trainers/<%= trainer.id %>"> Trainer Profile </a></p>
+<hr>
+<% end %>
 
 <p><a href="/trainers/new"> Add Trainer </a></p>
