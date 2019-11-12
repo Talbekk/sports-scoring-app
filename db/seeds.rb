@@ -25,6 +25,9 @@ trainer1 = Trainer.new({
   "monster1_id" => monster1.id,
   "monster2_id" => monster2.id,
   "monster3_id" => monster3.id,
+  "matches_played" => 2,
+  "games_won" => 1,
+  "games_lost" => 1,
   "points" => 3
 })
 
@@ -36,6 +39,9 @@ trainer2 = Trainer.new({
   "monster1_id" => monster1.id,
   "monster2_id" => monster2.id,
   "monster3_id" => monster3.id,
+  "matches_played" => 2,
+  "games_won" => 1,
+  "games_lost" => 1,
   "points" => 3
 })
 

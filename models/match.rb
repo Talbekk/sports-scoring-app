@@ -107,11 +107,19 @@ end
 def add_points_to_winner(trainers, match)
   for trainer in trainers
     if (match.get_match_winner.name ==  trainer.name)
-        trainer.add_win()
+        trainer.win_update_table()
         trainer.update()
+    else
+      trainer.lost_update_table()
       end
     end
 end
+
+def get_last_match()
+  matches = self.all()
+  return matches.last()
+end
+
 
 def self.all()
   sql = "SELECT * FROM matches"

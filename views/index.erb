@@ -1,9 +1,14 @@
 <h1><b>The Pokemon League</b></h1>
 
+
+<h3><b>League Table:</b></h3>
 <table>
   <thead>
     <tr>
       <th>Name</th>
+      <th>Played</th>
+      <th>Won</th>
+      <th>Lost</th>
       <th>Points</th>
     </tr>
     </thead>
@@ -11,7 +16,15 @@
         <% @trainers.each do |trainer| %>
         <tr>
           <td> <%= trainer.name %></td>
+          <td> <%= trainer.matches_played %></td>
+          <td> <%= trainer.games_won %></td>
+          <td> <%= trainer.games_lost %></td>
           <td><%= trainer.points %></td>
         </tr>
         <% end %>
 </table>
+
+<p></p>
+<p><h3><b>Latest Match:</b></h3></p>
+<p><%= @match.trainer1.first.name %> <%= @match.home_score %> - <%= @match.away_score %> <%= @match.trainer2.first.name %></p>
+<p><a href="/matches/<%= @match.id %>"> Match Details </a></p>

@@ -1,16 +1,17 @@
 <h1>Head To Head</h1>
 
-<p>Trainer Name: <%= @match.trainer1.first.name %></p>
-<p>Hometown: <%= @match.trainer1.first.hometown %></p>
+<% trainer1 = @match.trainer1.first %>
+<% trainer2 = @match.trainer2.first %>
+
+<p>Trainer Name: <a href="/trainers/<%= trainer1.id %>"><%= trainer1.name %></a></p>
 <p>Score: <%= @match.home_score %></p>
 
 <hr>
 
-<p>Trainer Name: <%= @match.trainer2.first.name %></p>
-<p>Hometown: <%= @match.trainer2.first.hometown %></p>
+<p>Trainer Name: <a href="/trainers/<%= trainer2.id %>"><%= trainer2.name %></a></p>
 <p>Score: <%= @match.away_score %></p>
 
-<a href="/matches/<%= @match.id %>/edit">Edit Match</a>
+<a href="/matches/<%= @match.id %>/edit"> Edit Match</a>
 <form action="/matches/<%= @match.id %>/delete" method="post">
   <input type="submit"
   name="" value="REMOVE">

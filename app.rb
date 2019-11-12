@@ -10,5 +10,7 @@ get '/' do
   @trainers1 = Trainer.all()
   @trainers2 = @trainers1.sort_by {|trainer| trainer.points}
   @trainers = @trainers2.reverse
+  @match1 = Match.all()
+  @match = @match1.last()
   erb( :index )
 end
