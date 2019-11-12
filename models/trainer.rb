@@ -54,6 +54,24 @@ def update()
   SqlRunner.run(sql, values)
 end
 
+def update_except_points()
+  sql = "UPDATE trainers
+  SET
+  (
+    name,
+    hometown,
+    monster1_id,
+    monster2_id,
+    monster3_id
+  ) =
+  (
+    $1, $2, $3, $4, $5
+  )
+  WHERE id = $6"
+  values = [@name, @hometown, @monster1_id, @monster2_id, @monster3_id, @id]
+  SqlRunner.run(sql, values)
+end
+
 def monster1()
   sql = "SELECT * FROM monsters
   WHERE id = $1"
@@ -129,9 +147,9 @@ def self.find( id )
     return Trainer.new( results.first )
 end
 
-def self.delete_all
-    sql = "DELETE FROM trainers"
-    SqlRunner.run( sql )
+def self.delete_all()
+  sql = "DELETE FROM trainers"
+  SqlRunner.run( sql )
 end
 
 def self.map_all(match_data)

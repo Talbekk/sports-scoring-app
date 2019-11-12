@@ -44,7 +44,7 @@ end
 
 post '/trainers/:id' do
   trainer = Trainer.new(params)
-  trainer.update()
+  trainer.update_except_points()
   redirect to "/trainers/#{params['id']}"
 end
 

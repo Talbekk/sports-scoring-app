@@ -3,8 +3,8 @@ require_relative( "../models/match.rb" )
 require_relative( "../models/monster.rb")
 require("pry-byebug")
 
-Match.delete_all()
 Monster.delete_all()
+Match.delete_all()
 Trainer.delete_all()
 
 monster1 = Monster.new({"name" => "Venusaur", "type" => "Grass/Poison", "level" => 50})

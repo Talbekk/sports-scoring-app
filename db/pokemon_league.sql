@@ -1,6 +1,6 @@
 DROP TABLE matches;
-DROP TABLE monsters;
 DROP TABLE trainers;
+DROP TABLE monsters;
 
 CREATE TABLE monsters(
 id SERIAL8 PRIMARY KEY,
