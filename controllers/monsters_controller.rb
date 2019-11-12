@@ -31,13 +31,13 @@ get '/monsters/:id' do
   erb(:"monsters/show")
 end
 
-get '/matches/:id/edit' do
+get '/monsters/:id/edit' do
   @trainers = Trainer.all
-  @monster = Monster.find(params['id'])
+  @monster = Monster.find(params['id'].to_i)
   erb(:"monsters/edit")
 end
 
-post '/matches/:id' do
+post '/monsters/:id' do
   monster = Monster.new(params)
   monster.update()
   redirect to "/monsters/#{params['id']}"

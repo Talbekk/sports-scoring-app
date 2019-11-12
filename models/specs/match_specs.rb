@@ -2,6 +2,7 @@ require('minitest/autorun')
 require('minitest/rg')
 require_relative('../match.rb')
 require_relative('../trainer.rb')
+require_relative('../monster.rb')
 
 class MatchTest < Minitest::Test
 

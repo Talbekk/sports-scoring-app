@@ -1,0 +1,9 @@
+<h1> Pokemon Available: </h1>
+
+<% @monsters.each do |monster| %>
+  <p> Name: <a href="/monsters/<%= monster.id %>"><%= monster.name %></a></p>
+  <p><a href="/monsters/<%= monster.id %>"> Pokemon Details </a></p>
+  <hr/>
+<% end %>
+
+<p><a href="/monsters/new"> Add Monster </a></p>

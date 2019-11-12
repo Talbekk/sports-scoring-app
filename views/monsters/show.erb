@@ -1,0 +1,12 @@
+<h1><%= @monster.name %> (Pokemon)</h1>
+
+<p><b>Name: </b><%= @monster.name %></p>
+<p><b>Type: </b><%= @monster.type %></p>
+<p><b>Level: </b><%= @monster.level %></p>
+
+
+<a href="/monsters/<%= @monster.id %>/edit">Edit Pokemon</a>
+<form action="/monsters/<%= @monster.id %>/delete" method="post">
+  <input type="submit"
+  name="" value="BAN">
+</form>
