@@ -24,8 +24,15 @@ def setup
 end
 
 def test_get_monster_name()
-  assert_equal("Charizard", @monster1.name)
+  assert_equal("Charizard", @monster1.name())
+end
 
-  
+def test_get_monster_type()
+  assert_equal("Water", @monster2.type())
+end
+
+def test_get_monster_level()
+  assert_equal(50, @monster3.level())
+end
 
 end
