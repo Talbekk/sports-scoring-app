@@ -97,7 +97,7 @@ def add_points_to_winner(trainers, match)
         trainer.add_win()
         trainer.update()
       end
-    end 
+    end
 end
 
 # def get_match_winners_name(trainers, trainer_id)
@@ -120,17 +120,19 @@ def self.find( id )
   sql = "SELECT * FROM matches
   WHERE id = $1"
   values = [id]
-  results = SqlRunner.run( sql, values )
-  return Match.new( results.first )
+  results = SqlRunner.run(sql, values)
+  return Match.new(results.first)
 end
 
-def self.delete_all
+def self.delete_all()
   sql = "DELETE FROM matches"
-  SqlRunner.run( sql )
+  SqlRunner.run(sql)
 end
 
 def self.map_all(match_data)
-  return match_data.map { |match| Match.new(match) }
+  return match_data.map {
+    |match| Match.new(match)
+  }
 end
 
 end
