@@ -22,7 +22,10 @@ end
 post '/matches' do
   @trainers = Trainer.all()
   @match = Match.new(params)
-  @match.add_points_to_winner(@trainers, @match)
+  if (@match.get_total_score != 3)
+  redirect to "/matches/new"
+  end
+  @match.update_table(@trainers, @match)
   @match.save()
   erb(:"matches/create")
 end

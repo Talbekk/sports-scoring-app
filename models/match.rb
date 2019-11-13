@@ -104,20 +104,39 @@ return "draw" if (@home_score == @away_score)
   return trainer
 end
 
-def add_points_to_winner(trainers, match)
+def get_match_loser()
+  return "draw" if (@home_score == @away_score)
+  if (@home_score < @away_score )
+    result = @trainer1_id
+  else (@home_score > @away_score)
+    result = @trainer2_id
+  end
+  trainer = Trainer.find( result )
+  return trainer
+end
+
+def update_table(trainers, match)
   for trainer in trainers
     if (match.get_match_winner.name ==  trainer.name)
         trainer.win_update_table()
         trainer.update()
     else
+      if (match.get_match_loser.name == trainer.name)
       trainer.lost_update_table()
+      trainer.update()
+    end
       end
     end
-end
+  end 
 
 def get_last_match()
   matches = self.all()
   return matches.last()
+end
+
+def get_total_score()
+  total = @home_score + @away_score
+  return total
 end
 
 

@@ -3,7 +3,7 @@ require_relative( '../db/sql_runner' )
 class Trainer
 
 attr_reader( :id, :name, :hometown )
-attr_accessor( :monster1_id, :monster2_id, :monster3_id, :matches_played, :games_won, :games_lost, :points )
+attr_accessor( :monster1_id, :monster2_id, :monster3_id, :matches_played, :matches_won, :matches_lost, :games_won, :games_lost, :points )
 
 def initialize( options )
   @id = options['id'].to_i if options['id']
@@ -13,6 +13,8 @@ def initialize( options )
   @monster2_id = options['monster2_id'].to_i
   @monster3_id = options['monster3_id'].to_i
   @matches_played = options['matches_played'].to_i
+  @matches_won = options['matches_won'].to_i
+  @matches_lost = options['matches_lost'].to_i
   @games_won = options['games_won'].to_i
   @games_lost = options['games_lost'].to_i
   @points = options['points'].to_i
@@ -27,16 +29,18 @@ def save()
     monster2_id,
     monster3_id,
     matches_played,
+    matches_won,
+    matches_lost,
     games_won,
     games_lost,
     points
   )
   VALUES
   (
-    $1, $2, $3, $4, $5, $6, $7, $8, $9
+    $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11
   )
   RETURNING id"
-  values = [@name, @hometown, @monster1_id, @monster2_id, @monster3_id, @matches_played, @games_won, @games_lost, @points]
+  values = [@name, @hometown, @monster1_id, @monster2_id, @monster3_id, @matches_played, @matches_won, @matches_lost, @games_won, @games_lost, @points]
   results = SqlRunner.run(sql, values)
   @id = results.first()['id'].to_i
 end
@@ -51,15 +55,17 @@ def update()
     monster2_id,
     monster3_id,
     matches_played,
+    matches_won,
+    matches_lost,
     games_won,
     games_lost,
     points
   ) =
   (
-    $1, $2, $3, $4, $5, $6, $7, $8, $9
+    $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11
   )
-  WHERE id = $10"
-  values = [@name, @hometown, @monster1_id, @monster2_id, @monster3_id, @matches_played, @games_won, @games_lost, @points, @id]
+  WHERE id = $12"
+  values = [@name, @hometown, @monster1_id, @monster2_id, @monster3_id, @matches_played, @matches_won, @matches_lost, @games_won, @games_lost, @points, @id]
   SqlRunner.run(sql, values)
 end
 
@@ -73,14 +79,16 @@ def update_except_points()
     monster2_id,
     monster3_id,
     matches_played,
+    matches_won,
+    matches_lost,
     games_won,
     games_lost
   ) =
   (
-    $1, $2, $3, $4, $5, $6, $7, $8
+    $1, $2, $3, $4, $5, $6, $7, $8, $9, $10
   )
-  WHERE id = $9"
-  values = [@name, @hometown, @monster1_id, @monster2_id, @monster3_id, @matches_played, @games_won, @games_lost, @id]
+  WHERE id = $11"
+  values = [@name, @hometown, @monster1_id, @monster2_id, @monster3_id, @matches_played, @matches_won, @matches_lost, @games_won, @games_lost, @id]
   SqlRunner.run(sql, values)
 end
 
@@ -142,13 +150,13 @@ end
 
 def win_update_table()
   @matches_played += 1
-  @games_won += 1
+  @matches_won += 1
   @points += 3
 end
 
 def lost_update_table()
   @matches_played += 1
-  @games_won += 1
+  @matches_lost += 1
 end
 
 def self.all()

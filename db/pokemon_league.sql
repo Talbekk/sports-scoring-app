@@ -17,6 +17,8 @@ CREATE TABLE trainers (
   monster2_id INT8 REFERENCES monsters(id),
   monster3_id INT8 REFERENCES monsters(id),
   matches_played INT8,
+  matches_won INT8,
+  matches_lost INT8,
   games_won INT8,
   games_lost INT8,
   points INT8
