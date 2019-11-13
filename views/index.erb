@@ -1,5 +1,4 @@
-<h1><b>The Pokemon League</b></h1>
-
+<h1><b><u>The Pokemon League</u></b></h1>
 
 <h3><b>League Table:</b></h3>
 <table>
@@ -23,8 +22,8 @@
         </tr>
         <% end %>
 </table>
-
+<hr>
 <p></p>
-<p><h3><b>Latest Match:</b></h3></p>
+<p><h2><b>Latest Match:</b></h2></p>
 <p><%= @match.trainer1.first.name %> <%= @match.home_score %> - <%= @match.away_score %> <%= @match.trainer2.first.name %></p>
-<p><a href="/matches/<%= @match.id %>"> Match Details </a></p>
+<p><a href="/matches/<%= @match.id %>"> <b>Match Details</b></a></p>

@@ -1,4 +1,4 @@
-<h1>Head To Head</h1>
+<h1><b><u>Head To Head</b></u></h1>
 
 <% trainer1 = @match.trainer1.first %>
 <% trainer2 = @match.trainer2.first %>
@@ -16,10 +16,11 @@
 <p><b>WINNER:</b> <%= @match.get_match_winner.name %></p>
 
 <a href="/matches/<%= @match.id %>/edit"> Edit Match</a>
+<br></br>
 <form action="/matches/<%= @match.id %>/delete" method="post">
   <input type="submit"
   name="" value="REMOVE">
 </form>
 
 <hr>
-<p><a href='/monsters'> Back To Matches</a></p>
+<p><a href='/matches'> Back To Matches</a></p>

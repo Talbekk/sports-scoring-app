@@ -18,9 +18,10 @@
 </ul>
 <p><b>Record: </b><%= @trainer.matches_won %> - <%= @trainer.matches_lost %></p>
 <a href="/trainers/<%= @trainer.id %>/edit">Edit Trainer</a>
+<br></br>
 <form action="/trainers/<%= @trainer.id %>/delete" method="post">
   <input type="submit"
-  name="" value="REMOVE">
+  name="" value="Withdraw">
 </form>
 <hr>
 <p><a href='/monsters'> Back To Trainers</a></p>

@@ -27,7 +27,7 @@ post '/monsters' do
       redirect to "/monsters/new"
     end
   end
-  monster.save()
+  new_monster.save()
   redirect to ("/monsters")
 end
 
@@ -46,12 +46,7 @@ end
 post '/monsters/:id' do
   monsters = Monster.all()
   new_monster = Monster.new(params)
-  for monster in monsters
-    if (monster.name == new_monster.name )
-      redirect to "/monsters/#{params['id']}/edit"
-    end
-  end
-  monster.update()
+  new_monster.update()
   redirect to "/monsters/#{params['id']}"
 end
 

@@ -1,11 +1,9 @@
 <body>
-<h1> Trainer List: </h1>
-
-
+<h1><b>Trainer List:</b></h1>
 
 <% @trainers.each do |trainer| %>
 <p><%= trainer.name %></p>
-<p><a href="/trainers/<%= trainer.id %>"> Trainer Profile </a></p>
+<p><a href="/trainers/<%= trainer.id %>"><u>Trainer Profile</u></a></p>
 <hr>
 <% end %>
 

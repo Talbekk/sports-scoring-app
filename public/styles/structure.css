@@ -4,3 +4,44 @@ body {
   font-family: Lato, sans-serif;
   maring: 30px;
 }
+
+a {
+  color:black;}
+  /* font-family: 'Roboto Slab';} */
+  /* Unvisited link  */
+a:visited {
+  color:black;
+  } /* Visited link    */
+a:hover {
+  color:#BF3030;
+}
+
+img {
+  height: 200px;
+  width: 100%;
+}
+
+.header {
+  /* font-family: "Arial", sans-serif; */
+  font-size: 14px;
+  line-height: 1.25;
+  background-color: #7b9ea8;
+  top: 0;
+  width: 150%;
+  font-weight: 900;
+  text-align: center;
+}
+
+.header li {
+  display: inline-block;
+}
+
+.header a {
+  display: block;
+  /* color: #4A4A4A; */
+  padding: 30px 20px;
+}
+
+a.home {
+  /* color: #4D00FF; */
+}

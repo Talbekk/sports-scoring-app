@@ -8,22 +8,13 @@
 </head>
 <body>
   <main class="flex flex--row">
-  <nav>
+  <nav class="header">
     <ul>
-      <li>
-        <a href="/"><b>Home</b></a>
-      </li>
-      <li>
-        <a href="/trainers"><b>Trainers</b></a>
-      </li>
-      <li>
-        <a href="/monsters"><b>Pokemon</b></a>
-      </li>
-      <li>
-        <a href="/matches"><b>Matches</b></a>
-      </li>
+      <li><a class="home" href="/">Home</a></li>
+      <li><a class="pagelink" href="/trainers">Trainers</a></li>
+      <li><a class="pagelink" href="/monsters">Pokemon</a></li>
+      <li><a class="pagelink" href="/matches">Matches</a></li>
     </ul>
-    <hr/>
   </nav>
   <section id="Options">
   <%= yield %>
