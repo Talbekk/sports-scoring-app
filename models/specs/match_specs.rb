@@ -54,34 +54,37 @@ def test_get_total_score()
   assert_equal(5, @match1.get_total_score)
 end
 
-# def test_get_trainer_name()
-#   assert_equal(1, @match1.trainer1_id())
-#   assert_equal(2, @match1.trainer2_id())
-# end
-#
+def test_get_trainer_name()
+  assert_equal(1, @match1.trainer1_id())
+  assert_equal(2, @match1.trainer2_id())
+end
+
 # def test_get_match_winner()
 #   result = @match1.get_match_winner()
-#   assert_equal("Ash Ketchum", result.name)
-#   assert_equal(3, result.points)
+#   assert_equal(1, result.id)
 # end
 #
-# # def test_get_match_winners_name()
-# #   result = @match1.get_match_winner()
-# #   name = @match1.get_match_winners_name(@trainers, result)
-# #   assert_equal("Ash Ketchum", name)
-# # end
-#
-# def test_get_match_winner__draw()
-#   options = ({
-#     "trainer1_id" => @trainer1.id,
-#     "home_score" => 2,
-#     "trainer2_id" => @trainer2.id,
-#     "away_score" => 2
-#   })
-#   @match2 = Match.new(options)
-#
-#   result = @match2.get_match_winner
-#   assert_equal("draw", result)
+# def test_get_match_winners_name()
+#   result = @match1.get_match_winner()
+#   name = @match1.get_match_winners_name(@trainers, result)
+#   assert_equal("Ash Ketchum", name)
 # end
+
+def test_get_match_winner__draw()
+  options = ({
+    "trainer1_id" => @trainer1.id,
+    "home_score" => 2,
+    "trainer2_id" => @trainer2.id,
+    "away_score" => 2
+  })
+  @match2 = Match.new(options)
+
+  result = @match2.get_match_winner
+  assert_equal("draw", result)
+end
+
+def test_get_total_score()
+  assert_equal(5, @match1.get_total_score)
+end 
 
 end

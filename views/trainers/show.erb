@@ -1,3 +1,4 @@
+<body>
 <h1><%= @trainer.name %> (Trainer)</h1>
 
 <p><b>Hometown: </b><%= @trainer.hometown %></p>
@@ -15,7 +16,7 @@
   <p><a href="/matches/<%= match.id %>"> <b>Match Details</b></a></p>
   <% end %>
 </ul>
-<p><b>Record: </b><%= @trainer.games_won %> - <%= @trainer.games_lost %></p>
+<p><b>Record: </b><%= @trainer.matches_won %> - <%= @trainer.matches_lost %></p>
 <a href="/trainers/<%= @trainer.id %>/edit">Edit Trainer</a>
 <form action="/trainers/<%= @trainer.id %>/delete" method="post">
   <input type="submit"
@@ -23,3 +24,4 @@
 </form>
 <hr>
 <p><a href='/monsters'> Back To Trainers</a></p>
+</body>

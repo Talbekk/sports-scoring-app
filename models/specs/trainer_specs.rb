@@ -54,9 +54,14 @@ def test_add_points()
 end
 
 def test_add_win()
-  @trainer1.add_win()
+  @trainer1.win_update_table()
   assert_equal(3, @trainer1.points())
 end
+
+def test_add_loss()
+  @trainer1.lost_update_table()
+  assert_equal(0, @trainer2.points())
+end 
 
 def test_get_monster_name()
   assert_equal(1, @trainer2.monster1_id())
