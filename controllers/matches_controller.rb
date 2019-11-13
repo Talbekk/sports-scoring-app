@@ -22,7 +22,7 @@ end
 post '/matches' do
   @trainers = Trainer.all()
   @match = Match.new(params)
-  if (@match.get_total_score != 3)
+  if (@match.get_total_score != 3 || @match.trainer1.first.name == @match.trainer2.first.name)
   redirect to "/matches/new"
   end
   @match.update_table(@trainers, @match)
