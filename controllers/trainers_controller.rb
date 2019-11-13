@@ -58,7 +58,22 @@ get '/trainers/:id/edit' do
 end
 
 post '/trainers/:id' do
-  trainer = Trainer.new(params)
+  trainers = Trainer.all()
+  new_trainer = Trainer.new(params)
+  for trainer in trainers
+    if (trainer.name == new_trainer.name)
+    redirect to "/trainers/new"
+  end
+end
+  if ( new_trainer.monster1.first.name == new_trainer.monster2.first.name || new_trainer.monster3.first.name)
+    redirect to "/trainers/new"
+  end
+  if ( new_trainer.monster2.first.name == new_trainer.monster1.first.name || new_trainer.monster3.first.name)
+    redirect to "/trainers/new"
+  end
+  if ( new_trainer.monster3.first.name == new_trainer.monster2.first.name || new_trainer.monster1.first.name)
+    redirect to "/trainers/new"
+  end
   trainer.update_except_points()
   redirect to "/trainers/#{params['id']}"
 end
