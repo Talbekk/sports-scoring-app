@@ -138,6 +138,13 @@ def matches()
   return matches
 end
 
+def delete_matches(trainer)
+  matches = trainer.matches()
+  for match in matches
+    match.delete()
+  end
+end
+
 def delete()
   sql = "DELETE FROM trainers WHERE id = $1"
   values = [@id]

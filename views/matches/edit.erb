@@ -3,7 +3,7 @@
   <li>Matches are best of three.</li>
   <li>A trainer cannot face themselves.</li>
 </ol>
-<p>You will be redirected to this page if any of these conditions are not met.</p>
+<p><b>Note:</b> You will be redirected to this page if any of these conditions are not met.</p>
 <hr>
 
 <form method="post" action="/matches/<%= @match.id %>">
@@ -20,7 +20,12 @@
 </select>
 <br>
 <label for="home-score">Score: </label>
-<input type="number" min="0" max="3" id="home-score" name="home_score" value=<%= @match.home_score %>>
+<select name="home_score" id="home-score" value=<%= @match.home_score %> >
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
 <br>
 <label for="trainer2-select">Trainer Name: </label>
 <select name="trainer2_id" id="trainer2-select" selected="<%= @match.trainer2_id %>">
@@ -34,7 +39,12 @@
 </select>
 <br>
 <label for="away-score">Score: </label>
-<input type="number" min="0" max="3" id="away-score" name="away_score" value=<%= @match.away_score %>>
+<select name="away_score" id="away-score" value=<%= @match.away_score %> >
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
 <br>
 <input type="Submit" value="Edit Match">
 

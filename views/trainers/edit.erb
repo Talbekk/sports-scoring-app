@@ -1,21 +1,21 @@
 
-<p><h2><b>New Trainer Rules:</b></h2></p>
+<p><h2><b> Trainer Rules:</b></h2></p>
 <ol>
   <li>A trainer can have only one of each pokemon in their team.</li>
 </ol>
-<p>You will be redirected to this page if any of these conditions are not met.</p>
+<p><b>Note:</b> You will be redirected to this page if any of these conditions are not met.</p>
 <hr>
 
 <form action="/trainers/<%= @trainer.id %>" method="post">
 <body>
 
 <label for="name">Name:</label>
-<input type="text" id="name" name="name" value="<%= @trainer.name %>"/>
+<input type="text" id="name" name="name" value="<%= @trainer.name %>" readonly/>
 
 <br>
 
 <label for="hometown">Hometown:</label>
-<input type="text" id="hometown" name="hometown" value="<%= @trainer.hometown %>"/>
+<input type="text" id="hometown" name="hometown" value="<%= @trainer.hometown %>" readonly/>
 
 <br>
 

@@ -1,12 +1,12 @@
 <body>
-<h1><%= @trainer.name %> (Trainer)</h1>
+<h2><%= @trainer.name %> (Trainer)</h2>
 
 <p><b>Hometown: </b><%= @trainer.hometown %></p>
 <p><b>Pokemon: </b></p>
 <ol>
-<li><%= @trainer.monster1.first.name %></li>
-<li> <%= @trainer.monster2.first.name %></li>
-<li><%= @trainer.monster3.first.name %> </li>
+<li><a href="/monsters/<%= @trainer.monster1.first.id %>"> <%= @trainer.monster1.first.name %></a></li>
+<li><a href="/monsters/<%= @trainer.monster2.first.id %>"> <%= @trainer.monster2.first.name %></a></li>
+<li><a href="/monsters/<%= @trainer.monster3.first.id %>"> <%= @trainer.monster3.first.name %></a></li>
 </ol>
 
 <p><b><u>List Of Matches:</u></b></p>

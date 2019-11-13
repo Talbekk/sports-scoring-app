@@ -1,7 +1,7 @@
-<h1> Pokemon Available: </h1>
+<h1><b><u>Pokemon Roster:</u></b></h1>
 
 <% @monsters.each do |monster| %>
-  <p> Name: <%= monster.name %></p>
+  <p> <%= monster.name %></p>
   <p><a href="/monsters/<%= monster.id %>"> Pokemon Profile </a></p>
   <hr/>
 <% end %>

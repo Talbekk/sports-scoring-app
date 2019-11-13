@@ -10,9 +10,7 @@ require_relative('../models/monster.rb')
 also_reload('../models/*')
 
 get '/trainers' do
-  @trainers1 = Trainer.all()
-  @trainers2 = @trainers1.sort_by {|trainer| trainer.points}
-  @trainers = @trainers2.reverse
+  @trainers = Trainer.all()
   erb (:"trainers/index")
 end
 
@@ -65,6 +63,7 @@ end
 
 post '/trainers/:id/delete' do
   trainer = Trainer.find(params['id'].to_i)
+  trainer.delete_matches(trainer)
   trainer.delete()
   redirect to '/trainers'
 end

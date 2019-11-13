@@ -5,6 +5,9 @@ body {
   maring: 30px;
 }
 
+h1 {
+  text-align: center;
+}
 a {
   color:black;}
   /* font-family: 'Roboto Slab';} */
@@ -14,6 +17,7 @@ a:visited {
   } /* Visited link    */
 a:hover {
   color:#BF3030;
+  transition: all 0.3s ease;
 }
 
 img {
@@ -21,7 +25,7 @@ img {
 }
 
 .header img {
-    
+
 }
 
 .header {
@@ -41,8 +45,10 @@ img {
 
 .header a {
   display: block;
+  margin: auto;
   /* color: #4A4A4A; */
   padding: 30px 20px;
+  width: 50%;
 }
 
 a.home {
