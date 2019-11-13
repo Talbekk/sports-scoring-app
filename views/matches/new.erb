@@ -1,5 +1,13 @@
 <form method="post" action="/matches" >
 
+<p><h2><b>Rules:</b></h2></p>
+<ol>
+  <li>Matches are best of three.</li>
+  <li>A trainer cannot face themselves.</li>
+</ol>
+<p>You will be redirected to this page if any of these conditions are not met.</p>
+<hr>
+
 <label for="trainer1-select">Trainer Name: </label>
 <select name="trainer1_id" id="trainer1-select">
   <% @trainers.each do |trainer| %>

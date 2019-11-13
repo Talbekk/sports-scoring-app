@@ -1,5 +1,14 @@
 <h1> Match List: </h1>
 
+<p><h2><b>Match Standards</b></h2></p>
+<ol>
+  <li>Matches follow a standard head to format</li>
+  <li>Each trainer chooses has three pokemon in their team</li>
+  <li>Matches are played out in a best of three</li>
+</ol>
+<p>You will be redirected to this page if any of these conditions are not met.</p>
+<hr>
+
 <% @matches.each do |match| %>
   <p><%= match.trainer1.first.name %> <%= match.home_score %> - <%= match.away_score %> <%= match.trainer2.first.name %></p>
   <p><a href="/matches/<%= match.id %>"> Match Details </a></p>
