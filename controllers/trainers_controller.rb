@@ -30,17 +30,12 @@ post '/trainers' do
     redirect to "/trainers/new"
   end
 end
-  if ( new_trainer.monster1.first.name == new_trainer.monster2.first.name || new_trainer.monster3.first.name)
-    redirect to "/trainers/new"
-  end
-  if ( new_trainer.monster2.first.name == new_trainer.monster1.first.name || new_trainer.monster3.first.name)
-    redirect to "/trainers/new"
-  end
-  if ( new_trainer.monster3.first.name == new_trainer.monster2.first.name || new_trainer.monster1.first.name)
-    redirect to "/trainers/new"
-  end
+  if ( (new_trainer.monster1.first.name != new_trainer.monster2.first.name && new_trainer.monster3.first.name) || (new_trainer.monster2.first.name != new_trainer.monster1.first.name && new_trainer.monster3.first.name) && (new_trainer.monster3.first.name != new_trainer.monster2.first.name || new_trainer.monster1.first.name))
   new_trainer.save()
   redirect to ("/trainers")
+else
+  redirect to "/trainers/new"
+end
 end
 
 get '/trainers/:id' do
@@ -62,17 +57,17 @@ post '/trainers/:id' do
   new_trainer = Trainer.new(params)
   for trainer in trainers
     if (trainer.name == new_trainer.name)
-    redirect to "/trainers/new"
+    redirect to "/trainers/#{params['id']}/edit"
   end
 end
   if ( new_trainer.monster1.first.name == new_trainer.monster2.first.name || new_trainer.monster3.first.name)
-    redirect to "/trainers/new"
+    redirect to "/trainers/#{params['id']}/edit"
   end
   if ( new_trainer.monster2.first.name == new_trainer.monster1.first.name || new_trainer.monster3.first.name)
-    redirect to "/trainers/new"
+    redirect to "/trainers/#{params['id']}/edit"
   end
   if ( new_trainer.monster3.first.name == new_trainer.monster2.first.name || new_trainer.monster1.first.name)
-    redirect to "/trainers/new"
+    redirect to "/trainers/#{params['id']}/edit"
   end
   trainer.update_except_points()
   redirect to "/trainers/#{params['id']}"

@@ -1,14 +1,22 @@
-body {
+/* body {
   background-color: #7b9ea8;
   font-size: 2em;
   font-family: Lato, sans-serif;
   maring: 30px;
-}
+} */
 
-table, th, td {
+/* table, th, td {
   border: 1px solid black;
   text-align: center;
   height: 40%;
   overflow-y: scroll;
   position: static;
 }
+
+.flex {
+  display: flex;
+}
+
+.flex--row {
+  flex-direction: row;
+} */
