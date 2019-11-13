@@ -60,17 +60,12 @@ post '/trainers/:id' do
     redirect to "/trainers/#{params['id']}/edit"
   end
 end
-  if ( new_trainer.monster1.first.name == new_trainer.monster2.first.name || new_trainer.monster3.first.name)
+  if ( (new_trainer.monster1.first.name != new_trainer.monster2.first.name && new_trainer.monster3.first.name) || (new_trainer.monster2.first.name != new_trainer.monster1.first.name && new_trainer.monster3.first.name) && (new_trainer.monster3.first.name != new_trainer.monster2.first.name || new_trainer.monster1.first.name))
+    trainer.update_except_points()
+    redirect to "/trainers/#{params['id']}"
+  else
     redirect to "/trainers/#{params['id']}/edit"
   end
-  if ( new_trainer.monster2.first.name == new_trainer.monster1.first.name || new_trainer.monster3.first.name)
-    redirect to "/trainers/#{params['id']}/edit"
-  end
-  if ( new_trainer.monster3.first.name == new_trainer.monster2.first.name || new_trainer.monster1.first.name)
-    redirect to "/trainers/#{params['id']}/edit"
-  end
-  trainer.update_except_points()
-  redirect to "/trainers/#{params['id']}"
 end
 
 post '/trainers/:id/delete' do
