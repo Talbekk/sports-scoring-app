@@ -23,8 +23,23 @@ get '/trainers/new' do
 end
 
 post '/trainers' do
-  trainer = Trainer.new(params)
-  trainer.save()
+  trainers = Trainer.all()
+  new_trainer = Trainer.new(params)
+  for trainer in trainers
+    if (trainer.name == new_trainer.name)
+    redirect to "/trainers/new"
+  end
+end
+  if ( new_trainer.monster1.first.name == new_trainer.monster2.first.name || new_trainer.monster3.first.name)
+    redirect to "/trainers/new"
+  end
+  if ( new_trainer.monster2.first.name == new_trainer.monster1.first.name || new_trainer.monster3.first.name)
+    redirect to "/trainers/new"
+  end
+  if ( new_trainer.monster3.first.name == new_trainer.monster2.first.name || new_trainer.monster1.first.name)
+    redirect to "/trainers/new"
+  end
+  new_trainer.save()
   redirect to ("/trainers")
 end
 
