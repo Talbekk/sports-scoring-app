@@ -124,10 +124,24 @@ def update_table(trainers, match)
       if (match.get_match_loser.name == trainer.name)
       trainer.lost_update_table()
       trainer.update()
-    end
       end
     end
-  end 
+  end
+end
+
+def update_table_remove_match(trainers, match)
+  for trainer in trainers
+    if (match.get_match_winner.name ==  trainer.name)
+        trainer.remove_win()
+        trainer.update()
+    else
+      if (match.get_match_loser.name == trainer.name)
+      trainer.remove_loss()
+      trainer.update()
+      end
+    end
+  end
+end
 
 def get_last_match()
   matches = self.all()

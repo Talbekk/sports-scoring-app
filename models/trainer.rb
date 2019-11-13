@@ -154,9 +154,20 @@ def win_update_table()
   @points += 3
 end
 
+def remove_win()
+  @matches_played -= 1
+  @matches_won -= 1
+  @points -= 3
+end
+
 def lost_update_table()
   @matches_played += 1
   @matches_lost += 1
+end
+
+def remove_loss()
+  @matches_played -= 1
+  @matches_lost -= 1
 end
 
 def self.all()

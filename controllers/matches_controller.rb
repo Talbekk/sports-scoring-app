@@ -39,20 +39,25 @@ end
 get '/matches/:id/edit' do
   @trainers = Trainer.all
   @match = Match.find(params['id'])
+  @match.update_table_remove_match(@trainers, @match)
   erb(:"matches/edit")
 end
 
 post '/matches/:id' do
+  @trainers = Trainer.all()
   @match = Match.new(params)
   if (@match.get_total_score != 3 || @match.trainer1.first.name == @match.trainer2.first.name)
   redirect to "/matches/#{params['id']}/edit"
   end
-  match.update()
+  @match.update_table(@trainers, @match)
+  @match.update()
   redirect to "/matches/#{params['id']}"
 end
 
 post '/matches/:id/delete' do
-  match = Match.find(params['id'].to_i)
-  match.delete()
+  @trainers = Trainer.all()
+  @match = Match.find(params['id'].to_i)
+  @match.update_table_remove_match(@trainers, @match)
+  @match.delete()
   redirect to '/matches'
 end

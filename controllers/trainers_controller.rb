@@ -55,13 +55,8 @@ end
 post '/trainers/:id' do
   trainers = Trainer.all()
   new_trainer = Trainer.new(params)
-  for trainer in trainers
-    if (trainer.name == new_trainer.name)
-    redirect to "/trainers/#{params['id']}/edit"
-  end
-end
   if ( (new_trainer.monster1.first.name != new_trainer.monster2.first.name && new_trainer.monster3.first.name) || (new_trainer.monster2.first.name != new_trainer.monster1.first.name && new_trainer.monster3.first.name) && (new_trainer.monster3.first.name != new_trainer.monster2.first.name || new_trainer.monster1.first.name))
-    trainer.update_except_points()
+    new_trainer.update_except_points()
     redirect to "/trainers/#{params['id']}"
   else
     redirect to "/trainers/#{params['id']}/edit"
