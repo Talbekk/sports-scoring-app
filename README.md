@@ -64,3 +64,15 @@ As a huge fan of [your sport], you want to stay up to date with the league. You'
 
 * Create a league table to see who is on top of the league.
 * Add players to teams and let them have game stats (points won, fouls, etc.).
+
+
+# Planning
+
+I used Trello to manage my progress through the week:
+
+![Image](/public/images/trelloBoard.png)
+
+This is an example of a proto-persona for my app:
+
+![Image](/public/images/user.png)
+---
