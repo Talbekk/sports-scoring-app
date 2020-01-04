@@ -8,7 +8,7 @@ This app was made as a solo project for the CodeClan course using Ruby for front
 
 # Installation
 
-Ensure that you have installed the [Sinatra Web Framework](http://sinatrarb.com/intro.html), [PostgreSQL](https://www.postgresql.org/) and 
+Ensure that you have installed the [Sinatra Web Framework](http://sinatrarb.com/intro.html), [PostgreSQL](https://www.postgresql.org/), the [minitest gem](https://rubygems.org/gems/minitest) and the [pry gem](https://rubygems.org/gems/pry).
 
 ## Create the database
 
@@ -43,4 +43,4 @@ ruby app.rb
 
 # Access the webpage
 
-[](https://localhost:4567)
+[Access Page](https://localhost:4567)
