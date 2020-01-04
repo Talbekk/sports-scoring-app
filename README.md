@@ -75,4 +75,21 @@ I used Trello to manage my progress through the week:
 This is an example of a proto-persona for my app:
 
 ![Image](/public/images/user.png)
+
 ---
+
+# Conclusions
+
+## Positive Outcomes
+
+* I made good use of Trello to break up my work into tickets so that I keep myself busy throughout the day. I was never looking for something to do. I feel that I was able to keep tasks simple enough  and I could structure my day and week well in advance.
+
+* This project really helped to develop my solo skills. I was the only student in the cohort to choose my topic so I had to figure a lot of my problems by myself or with the guidance of one of my instructors. I felt that process made me realise that I could actually do it and made me feel a lot more comfortable with progress through the course at that stage.
+
+* I was successful in making use of the lessons that we had been given in the four weeks leading up to the project. For example, I broke a lot of my methods into smaller, simple methods that I could test individually and reuse in other methods. I wanted to incorporate the TDD that we had been learning and put it into practice.
+
+## Things To Improve
+
+* I did not keep on track of my git commits as well as I should have. I would go long stretches of time without a single commit and I feel like I have to improve on this for when it comes to working in team where multiple people are using the same code.
+
+* I have to work on my attitude towards help from others, whether it be from a classmate or an instructor. I can be quite stubborn and need to be more comfortable asking for help rather than wasting time on a problem when I could be getting on with other tasks.
