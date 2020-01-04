@@ -8,7 +8,7 @@ This app was made as a solo project for the CodeClan course using Ruby for front
 
 # Installation
 
-Ensure that you have installed the [Sinatra Web Framework](http://sinatrarb.com/intro.html), [PostgreSQL](https://www.postgresql.org/),
+Ensure that you have installed the [Sinatra Web Framework](http://sinatrarb.com/intro.html), [PostgreSQL](https://www.postgresql.org/) and 
 
 ## Create the database
 
@@ -18,3 +18,29 @@ Follow these instructions to setup our database, which will allow the seeds to f
 dropdb pokemon_league
 createdb pokemon_league
 ```
+
+Create the tables and columns within the database:
+
+```bash
+cd db
+psql -d pokemon_league -f db/pokemon_league.sql
+```
+
+Fill the tables with content:
+
+```bash
+ruby seeds.rb
+```
+
+# Get the front-end up and running
+
+Follow these instructions to setup the front end of the application:
+
+```bash
+cd ..
+ruby app.rb
+```
+
+# Access the webpage
+
+[](https://localhost:4567)
