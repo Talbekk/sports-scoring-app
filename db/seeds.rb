@@ -1,7 +1,7 @@
 require_relative( "../models/trainer.rb" )
 require_relative( "../models/match.rb" )
 require_relative( "../models/monster.rb")
-require("pry-byebug")
+# require("pry-byebug")
 
 Match.delete_all()
 Trainer.delete_all()
@@ -154,5 +154,5 @@ match3 = Match.new({
 
 match3.save()
 
-binding.pry
+# binding.pry
 nil

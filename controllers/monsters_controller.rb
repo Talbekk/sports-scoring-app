@@ -1,7 +1,7 @@
 require('sinatra')
 require('sinatra/contrib/all')
 
-require('pry-byebug')
+# require('pry-byebug')
 
 require_relative( '../models/match.rb' )
 require_relative ('../models/trainer.rb')
