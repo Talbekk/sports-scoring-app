@@ -116,18 +116,19 @@ def get_match_loser()
 end
 
 def update_table(trainers, match)
-  for trainer in trainers
-    if (match.get_match_winner.name ==  trainer.name)
-        trainer.win_update_table()
-        trainer.update()
-    else
-      if (match.get_match_loser.name == trainer.name)
-      trainer.lost_update_table()
-      trainer.update()
-      end
-    end
-  end
-end
+  # defines the function for updating the table and takes in two parameters, the array of trainers and the match.
+  for trainer in trainers # loops through the array of trainers
+    if (match.get_match_winner.name ==  trainer.name) # checks if the match winning trainers name matches the current trainers name
+        trainer.win_update_table() # if it's the same, the table is adjusted to show the result of the match.
+        trainer.update() # then the trainers records are updated to show the result of the match.
+    else # runs if the name does not match the winning trainer name.
+      if (match.get_match_loser.name == trainer.name) # checks to see if the match loser's name is the same as the current trainers.
+      trainer.lost_update_table() # if yes, then the trainer's position on the table is adjusted accordingly.
+      trainer.update() # then the trainers details are updated to account for the loss.
+    end # ends the conditional within the else.
+  end # ends the conditional at the beginning of the loop.
+end # ends the for loop.
+end # ends the method.
 
 def update_table_remove_match(trainers, match)
   for trainer in trainers
