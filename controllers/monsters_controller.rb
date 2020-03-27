@@ -7,7 +7,7 @@ require_relative( '../models/match.rb' )
 require_relative ('../models/trainer.rb')
 require_relative('../models/monster.rb')
 
-also_reload( '../models/*' )
+# also_reload( '../models/*' )
 
 get '/monsters' do
   @monsters = Monster.all()
