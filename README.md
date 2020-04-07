@@ -4,6 +4,8 @@ The Pokemon League is a sports scoring app for pokefans to keep track of their f
 
 This app was made as a solo project for the CodeClan course using Ruby for front-end with a Sinatra web framework and PostgreSQL for the database.
 
+Check out the deployed app: https://poke-league.herokuapp.com/
+
 ---
 
 # Installation
