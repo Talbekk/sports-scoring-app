@@ -22,7 +22,7 @@ class SqlRunner
     ensure
       db.close() if db != nil
     end
-    return result
-  end
+  #   return result
+  # end
 
 end

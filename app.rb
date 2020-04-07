@@ -15,6 +15,6 @@ get '/' do
   @trainers = @trainers2.reverse
   @match1 = Match.all()
   @match = @match1.last()
-  erb( :index )
+  erb(:index)
 end
 
